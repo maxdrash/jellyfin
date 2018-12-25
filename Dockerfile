@@ -5,7 +5,6 @@ WORKDIR /repo
 COPY . .
 RUN export DOTNET_CLI_TELEMETRY_OPTOUT=1 \
  && cp -r ThirdParty/Emby.Common/MediaBrowser.Controller . \
- && cp -r ThirdParty/Emby.Common/MediaBrowser.Model . \
  && dotnet clean \
  && dotnet publish --configuration release --output /jellyfin
 
