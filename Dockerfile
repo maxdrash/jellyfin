@@ -4,6 +4,7 @@ FROM microsoft/dotnet:${DOTNET_VERSION}-sdk as builder
 WORKDIR /repo
 COPY . .
 RUN export DOTNET_CLI_TELEMETRY_OPTOUT=1 \
+ && rm -rf MediaBrowser.Controller \
  && cp -r ThirdParty/Emby.Common/MediaBrowser.Controller . \
  && dotnet clean \
  && dotnet publish --configuration release --output /jellyfin
