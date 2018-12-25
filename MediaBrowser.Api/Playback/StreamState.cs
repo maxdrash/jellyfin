@@ -148,7 +148,6 @@ namespace MediaBrowser.Api.Playback
             DisposeTranscodingThrottler();
             DisposeLiveStream();
             DisposeLogStream();
-            DisposeIsoMount();
 
             TranscodingJob = null;
         }
